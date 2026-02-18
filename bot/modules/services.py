@@ -11,20 +11,20 @@ from ..helper.telegram_helper.bot_commands import BotCommands
 async def start(_, message):
     buttons = ButtonMaker()
     buttons.url_button(
-        "Repo", "https://www.github.com/anasty17/mirror-leech-telegram-bot"
+        "Подписка", "https://t.me/tribute/app?startapp=sMms"
     )
-    buttons.url_button("Code Owner", "https://t.me/anas_tayyar")
+    buttons.url_button("Помощь", "https://t.me/ksi_fbot")
     reply_markup = buttons.build_menu(2)
     if await CustomFilters.authorized(_, message):
         start_string = f"""
-This bot can mirror from links|tgfiles|torrents|nzb|rclone-cloud to any rclone cloud, Google Drive or to telegram.
-Type /{BotCommands.HelpCommand} to get a list of available commands
+Спасибо за подписку! ❤️.\n Бот готов к работе.\n Данный бот умеет скачивать торренты/прямые линки, умеет скачивать с YouTube/VK/OK и многих-многих других ресурсов. /nПропишите /help чтобы получить список всех доступных команд.Type /{BotCommands.HelpCommand} to get a list of available commands
 """
         await send_message(message, start_string, reply_markup)
     else:
         await send_message(
             message,
-            "This bot can mirror from links|tgfiles|torrents|nzb|rclone-cloud to any rclone cloud, Google Drive or to telegram.\n\n⚠️ You Are not authorized user! Deploy your own mirror-leech bot",
+            "Данный бот умеет скачивать торренты/прямые линки, умеет скачивать с YouTube/VK/OK и многих-многих других ресурсов.\n\n⚠️ ⚠️ Если хотите получить доступ к боту — оформите, пожалуйста, подписку.
+Подписка: https://t.me/tribute/app?startapp=sMms",
             reply_markup,
         )
 
