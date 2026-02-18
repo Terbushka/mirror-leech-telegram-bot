@@ -17,7 +17,7 @@ async def start(_, message):
     reply_markup = buttons.build_menu(2)
     if await CustomFilters.authorized(_, message):
         start_string = f"""
-Спасибо за подписку! ❤️.\n Бот готов к работе.\n Данный бот умеет скачивать торренты/прямые линки, умеет скачивать с YouTube/VK/OK и многих-многих других ресурсов. /nПропишите /help чтобы получить список всех доступных команд.Type /{BotCommands.HelpCommand} to get a list of available commands
+Спасибо за подписку! ❤️.\nБот готов к работе.\nДанный бот умеет скачивать торренты/прямые линки, умеет скачивать с YouTube/VK/OK и многих-многих других ресурсов. /nПропишите /help чтобы получить список всех доступных команд.Type /{BotCommands.HelpCommand} to get a list of available commands
 """
         await send_message(message, start_string, reply_markup)
     else:
